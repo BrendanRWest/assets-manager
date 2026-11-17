@@ -58,6 +58,7 @@ public class House extends Asset{
     @Override
     public BigDecimal getValue(){
         BigDecimal value = new BigDecimal(0);
+        setCondition(condition);
 
         switch(condition){
             case 1:

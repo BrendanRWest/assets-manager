@@ -47,20 +47,21 @@ public class Vehicle extends Asset{
     @Override
     public BigDecimal getValue() {
         int yearDifference = 2026 - year;
+        BigDecimal value = originalCost;
 
         if(yearDifference <= 3) {
-            originalCost.subtract(originalCost.multiply(BigDecimal.valueOf(.03 * yearDifference)));
+            value = value.subtract(value.multiply(BigDecimal.valueOf(.03 * yearDifference)));
         } else if (yearDifference >= 4 && yearDifference <= 6) {
-            originalCost.subtract(originalCost.multiply(BigDecimal.valueOf(.06 * yearDifference)));
+            value = value.subtract(value.multiply(BigDecimal.valueOf(.06 * yearDifference)));
         } else if (yearDifference >= 7 && yearDifference <= 10){
-            originalCost.subtract(originalCost.multiply(BigDecimal.valueOf(.08 * yearDifference)));
+            value = value.subtract(value.multiply(BigDecimal.valueOf(.08 * yearDifference)));
         } else {
-            originalCost = BigDecimal.valueOf(1000);
+            value = BigDecimal.valueOf(1000);
         }
 
         if(odometer > 100000 && !makeModel.contains("Honda") && !makeModel.contains("Toyota")){
-            originalCost.subtract(originalCost.multiply(BigDecimal.valueOf(.25)));
+            value = value.subtract(value.multiply(BigDecimal.valueOf(.25)));
         }
-        return originalCost;
+        return value;
     }
 }
