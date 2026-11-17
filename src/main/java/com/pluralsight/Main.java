@@ -17,7 +17,7 @@ public class Main {
                 BigDecimal.valueOf(40000), "Honda Civic", 2020, 112000);
 
         Asset lambo = new Vehicle("The Womanizer", "July 2024",
-                BigDecimal.valueOf(480000), "Lamborghini Aventador", 2025, 13500);
+                BigDecimal.valueOf(480000), "Lamborghini Aventador", 2024, 13500);
 
         assets.add(home);
         assets.add(beachHouse);
