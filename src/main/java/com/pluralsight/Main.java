@@ -1,0 +1,34 @@
+package com.pluralsight;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Asset> assets = new ArrayList<>();
+
+        Asset home = new House("Home", "August 2021", BigDecimal.valueOf(500000),
+                "1007 Ericsson Dr", 1, 5000, 10000);
+
+        Asset beachHouse = new House("Vacation home", "June 2023", BigDecimal.valueOf(400000),
+                "315 Waterview Dr", 2, 3500, 7000);
+
+        Asset honda = new Vehicle("Daily driver", "February 2020",
+                BigDecimal.valueOf(40000), "Honda Civic", 2020, 112000);
+
+        Asset lambo = new Vehicle("Lamborghini", "July 2024",
+                BigDecimal.valueOf(480000), "Lamborghini Aventador", 2025, 13500);
+
+        assets.add(home);
+        assets.add(beachHouse);
+        assets.add(honda);
+        assets.add(lambo);
+
+        for (Asset asset : assets) {
+            System.out.println("Description: " + asset.getDescription());
+            System.out.println("Date acquired: " + asset.getDateAcquired());
+            System.out.println("Original cost: $" + asset.getOriginalCost());
+            System.out.println("Current value: $" + asset.getValue());
+        }
+    }
+}

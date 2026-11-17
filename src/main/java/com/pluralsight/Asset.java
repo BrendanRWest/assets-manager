@@ -25,6 +25,10 @@ public class Asset {
         return originalCost;
     }
 
+    public BigDecimal getOriginalCost(){
+        return originalCost;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
