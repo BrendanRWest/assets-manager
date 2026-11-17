@@ -16,7 +16,7 @@ public class Main {
         Asset honda = new Vehicle("Daily driver", "February 2020",
                 BigDecimal.valueOf(40000), "Honda Civic", 2020, 112000);
 
-        Asset lambo = new Vehicle("Lamborghini", "July 2024",
+        Asset lambo = new Vehicle("The Womanizer", "July 2024",
                 BigDecimal.valueOf(480000), "Lamborghini Aventador", 2025, 13500);
 
         assets.add(home);
@@ -25,10 +25,17 @@ public class Main {
         assets.add(lambo);
 
         for (Asset asset : assets) {
-            System.out.println("Description: " + asset.getDescription());
-            System.out.println("Date acquired: " + asset.getDateAcquired());
-            System.out.println("Original cost: $" + asset.getOriginalCost());
-            System.out.println("Current value: $" + asset.getValue());
+            if(asset instanceof House){
+                System.out.println("Address: " + ((House) asset).getAddress() + "\n");
+            }
+            if(asset instanceof Vehicle){
+                System.out.println("Make/Model: " + ((Vehicle) asset).getMakeModel() + "\n");
+                System.out.println("Year: " + ((Vehicle) asset).getYear() + "\n");
+            }
+            System.out.println("Description: " + asset.getDescription() + "\n");
+            System.out.println("Date acquired: " + asset.getDateAcquired() + "\n");
+            System.out.println("Original cost: $" + asset.getOriginalCost() + "\n");
+            System.out.println("Current value: $" + asset.getValue() + "\n");
         }
     }
 }
